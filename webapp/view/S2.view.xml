@@ -1,0 +1,47 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" controllerName="nico.app.testenovoapp.controller.S2" displayBlock="true">
+    <Page title="{i18n>s2_title}" showNavButton="true" navButtonPress="onNavButtonPress">
+        <content>
+            <ObjectHeader intro="{ProductID}" title="{ProductName}" number="{UnitPrice}" numberUnit="reais" icon="sap-icon://document">
+                <attributes>
+                
+                <ObjectAttribute title="em estoque" text="{UnitsInStock}"/>
+                </attributes>
+                <statuses>
+                <ObjectStatus title="abastecimento" text="{ReorderLevel}" />
+                
+                </statuses>
+
+            </ObjectHeader>
+                <Table items="{Order_Details}">
+                <columns>
+                
+                    <Column>
+                        <Text text="ID da ordem" />
+                    </Column>
+                    <Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline">
+                        <Text text="Quantidade" />
+                    </Column>
+                    <Column demandPopin="true" popinDisplay="Block" minScreenWidth="Phone">
+                        <Text text="Desconto" />
+                    </Column>
+                   
+                </columns>
+                <items>
+                    <ColumnListItem>
+                     
+                        <cells>
+                           <!-- <ObjectIdentifier title="{OrderID}"text="ordem" ></ObjectIdentifier> -->
+                            <ObjectNumber number="{OrderID}" unit=" ordem"></ObjectNumber>
+                            <ObjectStatus icon="sap-icon://product" text="{Quantity}"></ObjectStatus>
+                            <ObjectNumber number="{Discount}" unit="%"></ObjectNumber>
+                            
+                           
+                        </cells>
+                    </ColumnListItem>
+                </items>
+                </Table>
+        
+        
+        </content>
+    </Page>
+</mvc:View>
